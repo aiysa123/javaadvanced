@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--
+    <servlet>
+        <servlet-name>hello</servlet-name>
+        <servlet-class>com.xiaomiao.servlets.HelloWorldServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>/helloworld</url-pattern>
+    </servlet-mapping>
+    -->
+
+    <!--启动Spring容器-->
+    <!--
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:beans.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    -->
+
+    <!--
+    DispatcherServlet使用beans.xml配置文件创建WebApplicationContext容器对象，它的初始化方式和BeanFactory以及ApplicationContext有所区别，
+    因为WebApplicationContext需要 ServletContext实例，即必须在拥有Servlet容器的前提下才能完成Spring Web应用上下文的工作，开发者就可以很自然
+    的使用Spring的IOC,AOP等其他功能了
+    -->
+    <!--可以注释掉上面的使用Listener的方式启动Spring容器了-->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:beans.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <!--监听所有请求-->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>

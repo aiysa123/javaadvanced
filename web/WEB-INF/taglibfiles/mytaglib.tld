@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    <!--此tld文件必须放在WEB-INF目录或其子目录下才能生效!!!-->
+    <description>A tag library exercising SimpleTag handlers.</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>mytaglib</short-name>
+    <uri>http://wwww.xiaomiao.com/mytaglib</uri>
+
+    <tag>
+        <!--定义标签名-->
+        <name>helloworld</name>
+        <!--定义标签处理类-->
+        <tag-class>com.xiaomiao.tag.HelloWorldTag</tag-class>
+        <!--定义标签体为空-->
+        <body-content>empty</body-content>
+    </tag>
+
+</taglib>
+

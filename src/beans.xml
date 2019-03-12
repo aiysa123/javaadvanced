@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+
+    <!--开启包扫描-->
+    <context:component-scan base-package="com.xiaomiao" />
+    <!--开启注入注解扫描,没有配置这个的话,Autowired等注解不起作用-->
+    <context:annotation-config />
+
+    <!--配置Handle,映射/hello请求-->
+    <bean name="/hello" class="com.xiaomiao.controllers.HelloController" />
+    <!--处理器将bean的name作为url进行查找，需要在配置Handle时指定name(即url)-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+    <!--是一个处理器适配器，所有处理适配器都要实现HandlerAdapter接口-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+    <!--配置annotation类型的处理映射器-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <!--配置annotation类型的处理器适配器-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+    <!--视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" />
+</beans>
