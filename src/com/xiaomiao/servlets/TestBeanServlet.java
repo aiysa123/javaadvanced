@@ -16,21 +16,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 测试地址：http://localhost:9089/jdvan/testbeanservlet
+ * 娴嬭瘯鍦板潃锛歨ttp://localhost:9089/jdvan/testbeanservlet
  */
 @WebServlet(name = "testbeanservlet", urlPatterns = {"/testbeanservlet"})
 public class TestBeanServlet extends HttpServlet {
     @Autowired
     private MySpringBean mySpringBean;
 
-    //Autowired注解的属性在Servlet中通过init方法织入
+    //Autowired娉ㄨВ鐨勫睘鎬у湪Servlet涓�氳繃init鏂规硶缁囧叆
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(
                 this, config.getServletContext());
 
-        //或者使用下面的代替上面的processInjectionBasedOnServletContext方法
+        //鎴栬�呬娇鐢ㄤ笅闈㈢殑浠ｆ浛涓婇潰鐨刾rocessInjectionBasedOnServletContext鏂规硶
         /*ServletContext servletContext = this.getServletContext();
         WebApplicationContext wac = null;
         wac = WebApplicationContextUtils

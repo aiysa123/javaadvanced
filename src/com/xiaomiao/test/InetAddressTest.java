@@ -7,12 +7,12 @@ public class InetAddressTest {
     public static void main(String[] args) throws UnknownHostException {
         InetAddress address = InetAddress.getByName("time-A.timefreq.bldrdoc.gov");
         byte[] addressBytes = address.getAddress();
-        //Êý×éÊÇlengthÊôÐÔ£¬¶ø×Ö·û´®²âÊÔlength()·½·¨
+        //æ•°ç»„æ˜¯lengthå±žæ€§ï¼Œè€Œå­—ç¬¦ä¸²æµ‹è¯•length()æ–¹æ³•
         StringBuffer sbf = new StringBuffer();
-        sbf.append("IPÎª");
+        sbf.append("IPä¸º");
         int adres = 0;
         for (int i = 0; i < addressBytes.length; i++) {
-            //Èç¹û×Ö½ÚÊý×éÖÐµÄÄ³¸ö×Ö½Ú´óÓÚ128µÄ»°£¬½«»áµ¼ÖÂÊä³öÀ´µÄÊý×ÖÊÇ¸ºÊý£¬Ó¦´ËÎÒ°ÑÎÒµÄIPµØÖ·ÖÐ³¬¹ý128µÄ¼ÓÉÏ256£¬±ãÃ»ÎÊÌâÁË
+            //å¦‚æžœå­—èŠ‚æ•°ç»„ä¸­çš„æŸä¸ªå­—èŠ‚å¤§äºŽ128çš„è¯ï¼Œå°†ä¼šå¯¼è‡´è¾“å‡ºæ¥çš„æ•°å­—æ˜¯è´Ÿæ•°ï¼Œåº”æ­¤æˆ‘æŠŠæˆ‘çš„IPåœ°å€ä¸­è¶…è¿‡128çš„åŠ ä¸Š256ï¼Œä¾¿æ²¡é—®é¢˜äº†
             adres = addressBytes[i];
             if(adres < 0){
                 adres = adres + 256;

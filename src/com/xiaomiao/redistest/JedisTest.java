@@ -5,7 +5,7 @@ import redis.clients.jedis.Jedis;
 public class JedisTest {
     public static void main(String[] args) {
         Jedis jedis = new Jedis("localhost");
-        System.out.println("Á¬½Ó³É¹¦");
-        System.out.println("·şÎñÕıÔÚÔËĞĞ£º" + jedis.ping());
+        System.out.println("è¿æ¥æˆåŠŸ");
+        System.out.println("æœåŠ¡æ­£åœ¨è¿è¡Œï¼š" + jedis.ping());
     }
 }

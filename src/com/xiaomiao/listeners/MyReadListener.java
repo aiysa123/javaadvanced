@@ -16,7 +16,7 @@ public class MyReadListener implements ReadListener {
 
     @Override
     public void onDataAvailable() throws IOException {
-        System.out.println("Êı¾İ¿ÉÓÃ!!!");
+        System.out.println("æ•°æ®å¯ç”¨!!!");
         try {
             Thread.sleep(5000);
             StringBuilder sb = new StringBuilder();
@@ -27,9 +27,9 @@ public class MyReadListener implements ReadListener {
                 sb.append(data);
             }
             System.out.println(sb);
-            //½«Êı¾İÉèÖÃÎªrequest·¶Î§ÄÚµÄÊôĞÔ
+            //å°†æ•°æ®è®¾ç½®ä¸ºrequestèŒƒå›´å†…çš„å±æ€§
             actx.getRequest().setAttribute("info",sb.toString());
-            //×ª·¢µ½ÊÓÍ¼Ò³Ãæ
+            //è½¬å‘åˆ°è§†å›¾é¡µé¢
             actx.dispatch("/async/asyncread.jsp");
 
         } catch (Exception e) {
@@ -39,7 +39,7 @@ public class MyReadListener implements ReadListener {
 
     @Override
     public void onAllDataRead() throws IOException {
-        System.out.println("Êı¾İ¶ÁÈ¡Íê³É!!!");
+        System.out.println("æ•°æ®è¯»å–å®Œæˆ!!!");
     }
 
     @Override

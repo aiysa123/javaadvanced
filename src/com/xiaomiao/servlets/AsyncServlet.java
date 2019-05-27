@@ -14,9 +14,9 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 /**
- * ¶ÔÓÚÖ§³ÖÒì²½µ÷ÓÃµÄServletÀ´Ëµ,µ±ServletÒÔÒì²½µÄ·½Ê½ÆôÓÃĞÂÏß³Ìºó,¸ÃServletµÄÖ´ĞĞ²»»á±»×èÈû,¸ÃServlet½«¿ÉÒÔÏò¿Í»§¶Ëä¯ÀÀÆ÷Éú³ÉÏìÓ¦--µ±ĞÂÏß³ÌÖ´ĞĞÍê³Éºó,ĞÂÏß³Ì
- * Éú³ÉµÄÏìÓ¦ÔÙ´Î±»ËÍÍù¿Í»§¶Ëä¯ÀÀÆ÷
- * ²âÊÔÂ·¾¶£ºhttp://localhost:9089/jdvan/async
+ * å¯¹äºæ”¯æŒå¼‚æ­¥è°ƒç”¨çš„Servletæ¥è¯´,å½“Servletä»¥å¼‚æ­¥çš„æ–¹å¼å¯ç”¨æ–°çº¿ç¨‹å,è¯¥Servletçš„æ‰§è¡Œä¸ä¼šè¢«é˜»å¡,è¯¥Servletå°†å¯ä»¥å‘å®¢æˆ·ç«¯æµè§ˆå™¨ç”Ÿæˆå“åº”--å½“æ–°çº¿ç¨‹æ‰§è¡Œå®Œæˆå,æ–°çº¿ç¨‹
+ * ç”Ÿæˆçš„å“åº”å†æ¬¡è¢«é€å¾€å®¢æˆ·ç«¯æµè§ˆå™¨
+ * æµ‹è¯•è·¯å¾„ï¼šhttp://localhost:9089/jdvan/async
  */
 @WebServlet(name="async",urlPatterns = {"/async"},asyncSupported = true)
 public class AsyncServlet extends HttpServlet {
@@ -24,14 +24,14 @@ public class AsyncServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=utf-8");
         PrintWriter out = resp.getWriter();
-        out.println("<title>Òì²½µ÷ÓÃÊ¾Àı</title>");
-        out.println("½øÈëµ÷ÓÃµÄÊ±¼ä£º" + new Date() +"<br>");
+        out.println("<title>å¼‚æ­¥è°ƒç”¨ç¤ºä¾‹</title>");
+        out.println("è¿›å…¥è°ƒç”¨çš„æ—¶é—´ï¼š" + new Date() +"<br>");
         AsyncContext actx = req.startAsync();
-        //·ÅÔÚÒì²½µ÷ÓÃ(req.startAsync)Ö®ºó, Òì²½µ÷ÓÃÒÑ¾­¿ªÊ¼£¬ËùÒÔ½á¹û²¢Ã»¼àÌıµ½Òì²½µ÷ÓÃ¿ªÊ¼ÊÂ¼ş
+        //æ”¾åœ¨å¼‚æ­¥è°ƒç”¨(req.startAsync)ä¹‹å, å¼‚æ­¥è°ƒç”¨å·²ç»å¼€å§‹ï¼Œæ‰€ä»¥ç»“æœå¹¶æ²¡ç›‘å¬åˆ°å¼‚æ­¥è°ƒç”¨å¼€å§‹äº‹ä»¶
         actx.addListener(new MyAsyncListener());
         actx.setTimeout(60 * 1000);
         actx.start(new GeetBooksTarget(actx));
-        out.println("½áÊøServletµÄÊ±¼ä£º" + new Date() + "<br>");
+        out.println("ç»“æŸServletçš„æ—¶é—´ï¼š" + new Date() + "<br>");
 
     }
 }

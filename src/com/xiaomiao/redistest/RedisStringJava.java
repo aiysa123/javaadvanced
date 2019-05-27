@@ -5,8 +5,8 @@ import redis.clients.jedis.Jedis;
 public class RedisStringJava {
     public static void main(String[] args) {
         Jedis jedis = new Jedis("localhost");
-        System.out.println("连接成功");
+        System.out.println("杩炴帴鎴愬姛");
         jedis.set("hello","world");
-        System.out.println("redis存储的字符串为：" + jedis.get("hello"));
+        System.out.println("redis瀛樺偍鐨勫瓧绗︿覆涓猴細" + jedis.get("hello"));
     }
 }

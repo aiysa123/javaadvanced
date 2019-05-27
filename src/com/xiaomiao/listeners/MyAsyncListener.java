@@ -6,27 +6,27 @@ import java.io.IOException;
 import java.util.Date;
 
 /**
- * Òì²½¼àÌıÆ÷:²»ÓÃÔÚweb.xmlÖĞ»òÕßÊ¹ÓÃ@WebListener×¢²á£¬ÔÚ³ÌĞòÖĞÊ¹ÓÃAsyncListenerµÄaddListener·½·¨×¢²á¼´¿ÉÊ¹ÓÃ
+ * å¼‚æ­¥ç›‘å¬å™¨:ä¸ç”¨åœ¨web.xmlä¸­æˆ–è€…ä½¿ç”¨@WebListeneræ³¨å†Œï¼Œåœ¨ç¨‹åºä¸­ä½¿ç”¨AsyncListenerçš„addListeneræ–¹æ³•æ³¨å†Œå³å¯ä½¿ç”¨
  */
 public class MyAsyncListener implements AsyncListener {
     @Override
     public void onComplete(AsyncEvent asyncEvent) throws IOException {
-        System.out.println("Òì²½µ÷ÓÃ¼àÌıÆ÷Íê³É......" + new Date());
+        System.out.println("å¼‚æ­¥è°ƒç”¨ç›‘å¬å™¨å®Œæˆ......" + new Date());
     }
 
     @Override
     public void onTimeout(AsyncEvent asyncEvent) throws IOException {
-        System.out.println("Òì²½µ÷ÓÃ¼àÌıÆ÷³¬Ê±......");
+        System.out.println("å¼‚æ­¥è°ƒç”¨ç›‘å¬å™¨è¶…æ—¶......");
     }
 
     @Override
     public void onError(AsyncEvent asyncEvent) throws IOException {
-        System.out.println("Òì²½µ÷ÓÃ¼àÌıÆ÷´íÎó......");
+        System.out.println("å¼‚æ­¥è°ƒç”¨ç›‘å¬å™¨é”™è¯¯......");
 
     }
 
     @Override
     public void onStartAsync(AsyncEvent asyncEvent) throws IOException {
-        System.out.println("Òì²½µ÷ÓÃ¼àÌıÆ÷¿ªÊ¼......" + new Date());
+        System.out.println("å¼‚æ­¥è°ƒç”¨ç›‘å¬å™¨å¼€å§‹......" + new Date());
     }
 }

@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ÊµÏÖController½Ó¿ÚµÄ¿ØÖÆÆ÷£¬Ö»¿ÉÒÔ´¦ÀíÒ»¸öµ¥Ò»µÄÇëÇó
+ * å®ç°Controlleræ¥å£çš„æ§åˆ¶å™¨ï¼Œåªå¯ä»¥å¤„ç†ä¸€ä¸ªå•ä¸€çš„è¯·æ±‚
  */
 public class HelloController implements Controller {
     private static final Log logger = LogFactory.getLog(HelloController.class);
 
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        logger.info("handleRequest±»µ÷ÓÃ");
+        logger.info("handleRequestè¢«è°ƒç”¨");
         ModelAndView mv = new ModelAndView();
         mv.addObject("message", "Hello World");
         mv.setViewName("/WEB-INF/content/welcome.jsp");

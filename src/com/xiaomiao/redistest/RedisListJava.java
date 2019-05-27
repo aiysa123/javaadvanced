@@ -7,7 +7,7 @@ import java.util.List;
 public class RedisListJava {
     public static void main(String[] args) {
         Jedis jedis = new Jedis("localhost");
-        System.out.println("Á¬½Ó³É¹¦");
+        System.out.println("è¿æ¥æˆåŠŸ");
         jedis.lpush("test-list","xiaomiao");
         jedis.lpush("test-list","rensha");
         jedis.lpush("test-list","xiaojunen");
@@ -15,7 +15,7 @@ public class RedisListJava {
         List<String> list = jedis.lrange("test-list", 0, 2);
 
         for (int i = 0; i < list.size(); i++) {
-            System.out.println("ÁĞ±íÏîÎª£º" + list.get(i));
+            System.out.println("åˆ—è¡¨é¡¹ä¸ºï¼š" + list.get(i));
         }
     }
 }

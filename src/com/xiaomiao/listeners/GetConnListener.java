@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebListener;
 public class GetConnListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.out.println("webÓ¦ÓÃÆô¶¯¡£¡£¡£");
+        System.out.println("webåº”ç”¨å¯åŠ¨ã€‚ã€‚ã€‚");
     }
 
     @Override

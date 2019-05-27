@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class SocketTest {
     public static void main(String[] args) throws IOException {
 
-        //ÏÂÃæµÄ¹¹Ôì·½·¨»áÒ»Ö±×èÈû£¬Ö±µ½½¨Á¢Á¬½ÓÎªÖ¹
+        //ä¸‹é¢çš„æ„é€ æ–¹æ³•ä¼šä¸€ç›´é˜»å¡ï¼Œç›´åˆ°å»ºç«‹è¿æ¥ä¸ºæ­¢
         try(Socket s = new Socket("time-A.timefreq.bldrdoc.gov",13)){
             InputStream inputStream = s.getInputStream();
             Scanner scanner = new Scanner(inputStream);
@@ -19,11 +19,11 @@ public class SocketTest {
             }
         }
 
-        //Ì×½Ó×Ö³¬Ê±ÎÊÌâ
+        //å¥—æ¥å­—è¶…æ—¶é—®é¢˜
         Socket s = new Socket();
-        s.setSoTimeout(10000);  //10Ãëºó³¬Ê±£¬³¬Ê±ºó»áÅ×³öSocketTimeoutException
+        s.setSoTimeout(10000);  //10ç§’åè¶…æ—¶ï¼Œè¶…æ—¶åä¼šæŠ›å‡ºSocketTimeoutException
 
-        //¿ÉÒÔ½¨Á¢ÎŞÁ¬½ÓµÄÌ×½Ó×Ö½â¾ö×èÈûÎÊÌâ
+        //å¯ä»¥å»ºç«‹æ— è¿æ¥çš„å¥—æ¥å­—è§£å†³é˜»å¡é—®é¢˜
         Socket skt = new Socket();
         skt.connect(new InetSocketAddress("time-A.timefreq.bldrdoc.gov",13),10000);
     }

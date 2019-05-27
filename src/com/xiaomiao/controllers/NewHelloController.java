@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Ê¹ÓÃ×¢½âµÄ¿ØÖÆÆ÷£¬¿ÉÒÔÍ¬Ê±´¦Àí¶à¸öÇëÇó¶¯×÷£¬²¢ÇÒÎŞĞëÊµÏÖÈÎºÎ½Ó¿Ú
+ * ä½¿ç”¨æ³¨è§£çš„æ§åˆ¶å™¨ï¼Œå¯ä»¥åŒæ—¶å¤„ç†å¤šä¸ªè¯·æ±‚åŠ¨ä½œï¼Œå¹¶ä¸”æ— é¡»å®ç°ä»»ä½•æ¥å£
  */
 @Controller
 public class NewHelloController {
@@ -16,7 +16,7 @@ public class NewHelloController {
 
     @RequestMapping(value="/newhello")
     public ModelAndView hello() {
-        logger.info("hello·½·¨±»µ÷ÓÃ");
+        logger.info("helloæ–¹æ³•è¢«è°ƒç”¨");
         ModelAndView mv = new ModelAndView();
         mv.addObject("message", "Hello World");
         mv.setViewName("/WEB-INF/content/welcome.jsp");

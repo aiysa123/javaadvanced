@@ -21,22 +21,22 @@ public class UploadServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         req.setCharacterEncoding("UTF-8");
         String name = req.getParameter("name");
-        out.println("ÆÕÍ¨µÄname²ÎÊıÎª£º" + name + "<br/>");
-        //»ñÈ¡ÎÄ¼şÉÏ´«Óò
+        out.println("æ™®é€šçš„nameå‚æ•°ä¸ºï¼š" + name + "<br/>");
+        //è·å–æ–‡ä»¶ä¸Šä¼ åŸŸ
         Part part = req.getPart("file");
-        //»ñÈ¡ÉÏ´«ÎÄ¼şµÄÎÄ¼şÀàĞÍ
-        out.println("ÉÏ´«ÎÄ¼şÀàĞÍÎª£º" + part.getContentType() + "<br/>");
-        //»ñÈ¡ÉÏ´«ÎÄ¼şµÄ´óĞ¡
-        out.println("ÉÏ´«ÎÄ¼şµÄ´óĞ¡Îª£º" + part.getSize() + "<br/>");
-        //»ñÈ¡¸ÃÎÄ¼şÉÏ´«ÓòÖĞµÄHeader Name
+        //è·å–ä¸Šä¼ æ–‡ä»¶çš„æ–‡ä»¶ç±»å‹
+        out.println("ä¸Šä¼ æ–‡ä»¶ç±»å‹ä¸ºï¼š" + part.getContentType() + "<br/>");
+        //è·å–ä¸Šä¼ æ–‡ä»¶çš„å¤§å°
+        out.println("ä¸Šä¼ æ–‡ä»¶çš„å¤§å°ä¸ºï¼š" + part.getSize() + "<br/>");
+        //è·å–è¯¥æ–‡ä»¶ä¸Šä¼ åŸŸä¸­çš„Header Name
         Collection<String> headerNames = part.getHeaderNames();
-        //±éÀúÉÏ´«ÎÄ¼şÓòµÄHeader Name,Value
+        //éå†ä¸Šä¼ æ–‡ä»¶åŸŸçš„Header Name,Value
         for (String headerName : headerNames){
             out.println("headerName-->" + part.getHeader(headerName) + "<br/>");
         }
-        //»ñÈ¡°üº¬Ô­Ê¼ÎÄ¼şÃûµÄ×Ö·û´®
+        //è·å–åŒ…å«åŸå§‹æ–‡ä»¶åçš„å­—ç¬¦ä¸²
         String fileNameInfo = part.getHeader("content-disposition");
-        //ÌáÈ¡ÉÏ´«ÎÄ¼şµÄÔ­Ê¼ÎÄ¼şÃû
+        //æå–ä¸Šä¼ æ–‡ä»¶çš„åŸå§‹æ–‡ä»¶å
         String filename = fileNameInfo.substring(fileNameInfo.lastIndexOf("filename=\"") + 10,fileNameInfo.length() - 1);
         part.write(getServletContext().getRealPath("/uploadFiles") + "/" + filename);
     }

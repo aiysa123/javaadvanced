@@ -14,8 +14,8 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 /**
- * Servlet3.1(javaee7)ĞÂÔöµÄ·Ç×èÈûÊ½IO,¿ÉÒÔ¸üºÃµÄÌáÉıĞÔÄÜ(´¦Àí±íµ¥Ìá½»µÄÊı¾İ!!!)
- * ²âÊÔÂ·¾¶£ºhttp://localhost:9089/jdvan/async/asyncnewiotest.jsp
+ * Servlet3.1(javaee7)æ–°å¢çš„éé˜»å¡å¼IO,å¯ä»¥æ›´å¥½çš„æå‡æ€§èƒ½(å¤„ç†è¡¨å•æäº¤çš„æ•°æ®!!!)
+ * æµ‹è¯•è·¯å¾„ï¼šhttp://localhost:9089/jdvan/async/asyncnewiotest.jsp
  */
 @WebServlet(name = "asyncnewioservlet",urlPatterns = {"/asyncnewioservlet"},asyncSupported = true)
 public class AsyncNewIOServlet extends HttpServlet {
@@ -23,12 +23,12 @@ public class AsyncNewIOServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        out.println("<title>·Ç×èÈûIOÊ¾Àı</title>");
-        out.println("½øÈëServletµÄÊ±¼ä£º" + new Date() + ".<br/>");
+        out.println("<title>éé˜»å¡IOç¤ºä¾‹</title>");
+        out.println("è¿›å…¥Servletçš„æ—¶é—´ï¼š" + new Date() + ".<br/>");
         AsyncContext actx = req.startAsync();
         actx.setTimeout(60 * 1000);
         ServletInputStream input = req.getInputStream();
-        //ÎªÊäÈëÁ÷×¢²á¼àÌıÆ÷£¬MyReadListener¼àÌıÆ÷²»ĞèÒªÔÚweb.xmlÖĞ×¢²á
+        //ä¸ºè¾“å…¥æµæ³¨å†Œç›‘å¬å™¨ï¼ŒMyReadListenerç›‘å¬å™¨ä¸éœ€è¦åœ¨web.xmlä¸­æ³¨å†Œ
         input.setReadListener(new MyReadListener(input,actx));
         out.println();
         out.flush();

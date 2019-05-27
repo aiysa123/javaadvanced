@@ -8,7 +8,7 @@ import java.util.Set;
 public class RedisKeyJava {
     public static void main(String[] args) {
         Jedis jedis = new Jedis("localhost");
-        System.out.println("连接成功");
+        System.out.println("杩炴帴鎴愬姛");
 
         Set<String> keys = jedis.keys("*");
         Iterator<String> it = keys.iterator();

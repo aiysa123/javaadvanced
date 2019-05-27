@@ -18,9 +18,9 @@ public class GeetBooksTarget implements Runnable {
             Thread.sleep(5 *1000);
             ServletRequest request = actx.getRequest();
             List<String> list = new ArrayList<String>();
-            list.add("java编程思想");
-            list.add("tomcat指南");
-            list.add("java高级编程");
+            list.add("java缂栫▼鎬濇兂");
+            list.add("tomcat鎸囧崡");
+            list.add("java楂樼骇缂栫▼");
             request.setAttribute("books",list);
             actx.dispatch("/async/async.jsp");
         } catch (InterruptedException e) {
